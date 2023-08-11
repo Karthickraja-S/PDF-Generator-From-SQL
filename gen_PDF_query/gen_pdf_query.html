@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate PDF with SQL query</title>
+    <link rel="stylesheet" href="gen_pdf_query.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navBarContainer">
+        <div class="navTitle">
+            Site PDF Generator 
+            <div class="spinner hidden">
+
+            </div>
+        </div>
+        <div class="navOptions">
+            <ul class="navUl">
+                <li><a href="../index.html">Properties</a></li>
+                <li><a href="gen_pdf_query.html">Generate PDF from SQL query</a></li> 
+            </ul>
+        </div>
+    </nav>
+
+    <div class="mainContainer">
+        <div class="textContainer">
+            <textarea name="inputQuery" id="queryBox" cols="50" rows="10" placeholder="Insert your query here..."></textarea>
+            <div class="queryButtonContainer">
+                <button class="queryButton">Get Data</button>
+            </div>
+        </div>
+        <div class="resultContainer" style="position: relative">
+            <!-- table from server goes here -->
+        </div>
+    </div>
+
+    <script src="gen_pdf_query.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto';
+}
+:root{
+   --BACKGROUND-COLOR: rgba(0, 128, 0, 0.284);
+   --CONTAINER-COLOR: rgb(218, 233, 220);
+   --BOX-SHADOW: 2px 3px 8px gray;
+
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+nav{
+    position: absolute;
+    top: 0;
+}
+.navBarContainer{
+    /* border: 2px solid black; */
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: sticky;
+    top:0px;
+    background-color: rgba(0, 128, 0, 0.284);
+    backdrop-filter: blur(18px);
+    width: 100%;
+    z-index: 100;
+
+}
+.navTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 200;
+}
+.navUl{
+    list-style-type: none;
+}
+.navUl li{
+    display: inline-block;
+}
+.navUl a{
+    transition: all 0.2s;
+    text-decoration: none;
+    padding: 0px 10px;
+    color: rgb(55, 55, 55);
+    font-size: 18px;
+    padding: 15px;
+}
+.navUl a:hover,.navUl li:nth-child(4) a{
+    color: black;
+    background-color:rgba(242, 242, 242, 0.503);
+    border-radius: 25px;
+}
+.navUl li:nth-child(4) a{
+    background-color:rgb(242, 242, 242);
+    box-shadow: var(--BOX-SHADOW);
+}
+.mainContainer{
+    position: absolute;
+    padding: 15vh 0 0 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textContainer{
+    background-color: var(--CONTAINER-COLOR);
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textContainer button{
+    margin: 15px;
+    padding: 25px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--BACKGROUND-COLOR);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.textContainer button:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 5px 8px gray;
+}
+#queryBox{
+    font-family: monospace;
+    outline: none;
+    border: none;
+    width: 57vw;
+    height: 10vh;
+    resize: none;
+    font-size: 1.5rem;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px; 
+    transition: all 0.25s;
+}
+#queryBox::selection{
+    background-color: var(--BACKGROUND-COLOR);
+}
+#queryBox::placeholder{
+    font-family: monospace;
+    text-transform: lowercase;
+    color: var(--BACKGROUND-COLOR);
+}
+#queryBox:focus{
+    height: 15vh;
+    border-radius: 15px;
+    border: none; 
+    outline: none;
+    box-shadow: 2px 5px 15px rgba(128, 128, 128, 0.52);
+}
+.resultContainer{
+    position: relative;
+    margin: 2vh 0 4vh 0;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+@keyframes reveal {
+    0%{
+        transform: translateY(280px);
+    }
+    100%{
+        trnasform: translateY(0px);
+    }
+}
+table{
+    border-collapse: collapse;
+    width: 60vw;
+    height: 20vh;
+    font-size: 1.25rem;
+    animation: reveal 0.5s ease-in-out;
+}
+table:hover{
+    backdrop-filter: blur(5px);
+}
+table th{
+    text-transform: uppercase;
+    padding: 15px;
+}
+table td{
+    border: 0.25px solid rgba(128, 128, 128, 0.26);
+    padding: 15px;
+    text-align: center;
+}
+tr:nth-child(even){
+    background-color: var(--BACKGROUND-COLOR);
+}
+tr:nth-child(odd){
+    background-color: var(--CONTAINER-COLOR);
+}
+tr:nth-child(even):hover{
+    filter: brightness(0.3);
+}
+tr:nth-child(odd):hover{
+    filter: brightness(0.80);
+}
+.downloadContainer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* border: solid; */
+    /* width: 100vw; */
+}
+.errorContainer{
+    width: 58vw;
+    background-color: rgba(255, 0, 0, 0.52);
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 5px;
+}
+.spinner{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 5px solid rgb(107, 107, 107);
+    border-bottom: 5px solid rgba(128, 128, 128, 0.458);
+    margin-left: 15px;
+    animation: rotate 1s ease-in-out infinite;
+}
+@keyframes rotate {
+    form{
+        transform: rotateZ(0deg)
+    }
+    to{
+        transform: rotateZ(360deg)
+    }
+    
+}
+.hidden{
+    display: none;
+}

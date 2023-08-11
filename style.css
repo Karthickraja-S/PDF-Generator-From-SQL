@@ -1,0 +1,311 @@
+*{padding: 0; margin: 0; box-sizing: border-box;max-width: 100%;font-family: 'roboto';}
+main{
+    height: 100%;
+    width: 100%;
+}
+:root{
+    --BOX-SHADOW: 2px 3px 8px gray;
+}
+body{
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.responseMessage{
+    position: absolute;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    /* border: solid; */
+    backdrop-filter: blur(10px) brightness(0.70);
+    z-index: 100;
+    backdrop-filter: blur(10px) brightness(0.8);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.msgContainer{
+    min-width: 40vw;
+    min-height: 50vh;
+    border: 1px solid gray;
+    border-radius: 25px;
+    background-color: white;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+.msgContainer h2{
+    transform: translateY(450%);
+}
+.closeButton{
+    border: none;
+    outline: none;
+    color: red;
+    font-size: 1.25rem;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    border: 1.5px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 15px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.395);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.closeButton:hover{
+    transform:scale(1.07);
+}
+.navBarContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: sticky;
+    top:0px;
+    background-color: rgba(0, 128, 0, 0.284);
+    backdrop-filter: blur(18px);
+    width: 100%;
+    z-index: 100;
+}
+.navTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 200;
+}
+.navUl{
+    list-style-type: none;
+}
+.navUl li{
+    display: inline-block;
+}
+.navUl a{
+    transition: all 0.2s;
+    text-decoration: none;
+    padding: 0px 10px;
+    color: rgb(42, 42, 42);
+    font-size: 18px;
+    padding: 15px;
+    /* border: solid; */
+}
+.navUl a:hover,.navUl li:nth-child(1) a{
+    color: black;
+    background-color:rgba(242, 242, 242, 0.503);
+    border-radius: 25px;
+}
+.navUl li:nth-child(1) a{
+    background-color:rgb(242, 242, 242);
+    box-shadow: var(--BOX-SHADOW);
+}
+.formContainer{
+    margin:2% auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flex{
+    /* max-height:45vh; */
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* border: 1px solid black; */
+    background-color: rgba(0, 128, 0, 0.284);
+    box-shadow: 2px 5px 10px black;
+    padding: 15px 20px;
+    border-radius: 25px;
+}
+.formContainer div{
+    display:flex;
+}
+.formContact{
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;    
+}
+.formContact div{
+    flex: 1;
+}
+.imageSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+    margin: 5px;
+    background-color: rgba(128, 128, 128, 0.268);
+    border-radius: 15px;
+    background-size: cover;
+
+    position: relative;
+}
+.imageViewer{
+    object-fit: cover;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logoImage{
+    background-size: cover;  
+    max-width: 200px;
+    height: auto;
+    cursor: pointer; 
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+.chooseFileButton{
+    /* background-color: rgba(0, 128, 0, 0.284); */
+    /* padding: 15px; */
+    background: none;
+    margin-top: 8px;
+    font-size: 15px;
+    /* border-radius: 5px; */
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.chooseFileButton:hover{
+    /* transform: translateY(-5px); */
+    /* box-shadow: 2px 5px 8px gray; */
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+/* .chooseFile{
+    margin: 2px;
+    padding-top: 5px;
+    border: none;
+    outline: none;
+} */
+.changeImage{
+    display: none;  
+}
+/* .changeImage::after{
+    content: "";
+    border: none; 
+    outline: none;
+} */
+.imageSection img:hover{
+    transform: scale(1.01);
+    border-radius: 15px;
+} 
+.form input{
+    padding: 20px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 2px solid gray;
+    font-size: 15px;
+    flex: 1;
+    position: relative;
+}
+
+.formButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formButton button{
+    padding: 20px;
+    margin: 5px 0px 0px 0px;
+    font-size: 17px;
+    background-color: rgba(0, 128, 0, 0.284);
+    border-radius: 8px;  
+    cursor: pointer;
+    transition: all 0.15s;
+    border: none;
+}
+.formButton button:hover,.editButton:hover{
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: var(--BOX-SHADOW);
+}
+input::selection{
+    background-color: rgba(247, 253, 247, 0.284);
+}
+input::after{
+    content: 'Edit';
+    width: 50px;
+    height: 50px;
+    border: solid;
+    display: inline;
+}
+.formContainer div{
+    position:relative;
+}
+.editButton{
+    content: 'Edit';
+    position: absolute;
+    right: calc(0% + 25px);
+    top: calc(100% / 4);
+    background-color: rgba(0, 128, 0, 0.284);
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    transition: all 0.35s;
+}
+
+.loaderContainer{
+    /* border: solid; */
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px) brightness(0.70);
+    z-index: 100;
+}
+/* .loader{
+    width: 150px;
+    height: 150px;
+    border: solid;
+    border: 25px solid rgba(0, 0, 0, 0.789);
+    border-bottom: 25px solid rgba(0, 0, 0, 0.018);
+    border-radius: 50%;
+    animation: rotate 1s infinite ease;
+} */
+.spinner{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 5px solid rgb(107, 107, 107);
+    border-bottom: 5px solid rgba(128, 128, 128, 0.458);
+    margin-left: 15px;
+    animation: rotate 1s ease-in-out infinite;
+}
+@keyframes rotate {
+    from{
+        transform:rotateZ(0deg) 
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+.invisible{
+    display: none;
+}
+

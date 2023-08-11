@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site_PDF_Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navBarContainer">
+        <div class="navTitle">
+            Site PDF Generator
+            <div class="spinner invisible"></div>
+        </div>
+        <div class="navOptions">
+            <ul class="navUl">
+                <li><a href="#">Properties</a></li>
+                <li><a href="gen_PDF_query/gen_pdf_query.html">Generate PDF from SQL query</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="responseMessage invisible">
+            <div class="msgContainer">
+                <div class="closeButton">❌</div>
+                <h2><span>✅</span> Submission successful</h2>
+            </div>
+        </div>
+
+        <div class="formContainer">
+            <form class="form flex">
+                <div class="titleContainer">
+                    <input type="text" id="titleInput" placeholder="Title" disabled name='title' required>
+                    <button class="editButton" id = 'title'>Edit</button>
+                </div>
+                <div class="addressContainer">
+                    <input type="address" id="addressInput" placeholder="Address" disabled name="address" required>
+                    <button class="editButton" id = 'address' >Edit</button>
+                </div>
+                <div class="formContact">
+                    <div class="phoneContainer">
+                        <input type="tel" id="phoneInput" placeholder="Phone no." disabled name="contactNo" required>
+                        <button class="editButton" id = 'phone'>Edit</button>
+                    </div>
+                    <div class="emailContainer">
+                        <input type="email" id="emailInput" placeholder="Email id" disabled name="mailID" required>
+                        <button class="editButton" id = 'email'>Edit</button>
+                    </div>  
+                </div>
+                <div class="imageSection" style="position: relative;">
+                    <div class="imageViewer">
+                        <img alt="" class="logoImage" width: 250;>   
+                    </div> 
+                        <div class="chooseFile">
+                            <button class="chooseFileButton">Change Image</button>
+                            <input type="file" class="changeImage" accept="image/*" required>
+                            </div> 
+                    </div>
+                <div class="formButton"><button type="submit">Proceed</button></div>
+                
+            </form>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
